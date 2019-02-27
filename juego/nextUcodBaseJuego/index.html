@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,user-scalable=no">
+  <title>Juego</title>
+  <link rel="stylesheet" href="css/jquery-ui.min.css">
+  <link rel="stylesheet" href="css/estilos.css">
+
+</head>
+<body onload="cambiar()">
+  <div class="main-container">
+  <svg width="1200" height="150">
+    <text x="5" y="100"  fill="#ffff00" class="main-titulo">Match Game
+     <animate attributeName="fill" attributeType="CSS" values="#ffff00;#ffffff;#ffff00" dur="1s" repeatCount="indefinite"></animate>
+   </text>
+ </svg>
+
+
+    <div id="container" class="panel-tablero">
+
+      <div class="col-1">
+      
+      	 <div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none; " id="a" src="image/1.png"></div>
+    	 <div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -120px" id="b" src="image/1.png"></div>
+    	 <div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -240px" id="c" src="image/4.png"></div>
+    	 <div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -360px" id="d" src="image/2.png"></div>
+    	 <div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -470px" id="e" src="image/1.png"></div>
+    	 <div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -580px" id="f" src="image/2.png"></div>
+      	<div class="columna1" id="aqui" ></div>
+        <div class="columna1" id="aquia" ></div>
+        <div class="columna1" id="aquib" ></div>
+        <div class="columna1" id="aquic" ></div>
+        <div class="columna1" id="aquid" ></div>
+        <div class="columna1" id="aquif" ></div>
+      </div>
+
+      <div class="col-2">
+      
+      	 <div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none; " id="g" src="image/4.png"></div>
+    	 <div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -120px" id="h" src="image/1.png"></div>
+    	 <div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -240px" id="i" src="image/4.png"></div>
+    	 <div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -360px" id="j" src="image/1.png"></div>
+    	 <div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -470px" id="k" src="image/3.png"></div>
+    	 <div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -580px" id="l" src="image/4.png"></div>
+
+       <div class="columna1" id="aquig" ></div>
+        <div class="columna1" id="aquih" ></div>
+        <div class="columna1" id="aquii" ></div>
+        <div class="columna1" id="aquij" ></div>
+        <div class="columna1" id="aquik" ></div>
+        <div class="columna1" id="aquil" ></div>
+      	
+      </div>
+
+      <div class="col-3">
+      
+      	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none; " id="m" src="image/4.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -120px" id="n" src="image/2.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none; margin-top: -240px" id="o" src="image/4.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none; margin-top: -360px" id="p" src="image/1.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none; margin-top: -470px" id="q" src="image/3.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none; margin-top: -580px" id="r" src="image/3.png"></div>
+
+      <div class="columna1" id="aquim" ></div>
+        <div class="columna1" id="aquin" ></div>
+        <div class="columna1" id="aquio" ></div>
+          <div class="columna1" id="aquip" ></div>
+        <div class="columna1" id="aquiq" ></div>
+        <div class="columna1" id="aquir" ></div>
+      	
+      </div>
+
+      <div class="col-4">
+      
+      	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none; " id="s" src="image/3.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -120px" id="t" src="image/1.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -240px" id="u" src="image/3.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -360px" id="v" src="image/4.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -470px" id="w" src="image/1.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -580px" id="x" src="image/4.png"></div>
+       <div class="columna1" id="aquis" ></div>
+        <div class="columna1" id="aquit" ></div>
+        <div class="columna1" id="aquiu" ></div>
+        <div class="columna1" id="aquiv" ></div>
+        <div class="columna1" id="aquiw" ></div>
+        <div class="columna1" id="aquix" ></div>
+      	
+      </div>
+
+      <div class="col-5">
+      
+      	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none; " id="y" src="image/1.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -120px" id="z" src="image/1.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -240px" id="aa" src="image/1.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -360px" id="bb" src="image/2.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -470px" id="cc" src="image/2.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none; margin-top: -580px" id="dd" src="image/4.png"></div>
+      	<div class="columna1" id="aquiy" ></div>
+        <div class="columna1" id="aquiz" ></div>
+        <div class="columna1" id="aquiaa" ></div>
+        <div class="columna1" id="aquibb" ></div>
+        <div class="columna1" id="aquicc" ></div>
+        <div class="columna1" id="aquidd" ></div>
+      </div>
+
+      <div class="col-6">
+      
+      	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none; " id="ee" src="image/3.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -120px" id="ff" src="image/3.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -240px" id="gg" src="image/1.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -360px" id="hh" src="image/2.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none; margin-top: -470px" id="ii" src="image/2.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none; margin-top: -580px" id="jj" src="image/1.png"></div>
+      <div class="columna1" id="aquiee" ></div>
+        <div class="columna1" id="aquiff" ></div>
+        <div class="columna1" id="aquigg" ></div>
+        <div class="columna1" id="aquihh" ></div>
+        <div class="columna1" id="aquiii" ></div>
+        <div class="columna1" id="aquijj" ></div>
+
+      	
+      </div>
+
+   <!--    <div class="col-7">
+      
+      	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none; " id="kk" src="image/3.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -120px" id="ll" src="image/1.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -240px" id="mm" src="image/3.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -360px" id="nn" src="image/2.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -470px" id="oo" src="image/1.png"></div>
+    	<div class="columna1" ><img style="width: 100px; height: auto; position: absolute; display:none;  margin-top: -580px" id="pp" src="image/2.png"></div>
+      	
+    </div> -->
+</div>
+
+
+
+
+    <div class="panel-score">
+    	<div style="display:none;" id="cambio" class="score">
+    		<h2 class="data-titulo">Fin del juego</h2>
+    	</div>
+
+    	<div style="width: 100%;" id="modificable" class="score">
+    		<h2 class="data-titulo">Puntuación</h2>
+    		<span class="data-info" id="puntos">0</span>
+    	</div>
+    	<div style="width: 100%;" id="modificable1" class="moves">
+    		<h2 class="data-titulo">Movimientos</h2>
+    		<span class="data-info" id="movimiento">0</span>
+    	</div>
+    	<div style="width:100%;" id="modificable2" class="time">
+    		<h2 class="data-titulo">Tiempo</h2>
+    		<h2 class="data-info" id='tiempo'>00:00</h2>
+    	</div>
+    	<div style="width: 100%;"  id="modificable3"  class="buttons">
+    		<button style="display:block;" id="boton" onclick="setTimeout('saludo()',120000); mostrar(); inicio(); cambiarboton(); funcionPrincipal();" class="btn-reinicio">Iniciar</button>
+    		<button style="display:none;" onclick="reiniciar();" id="nuevoboton" class="btn-reinicio">Reiniciar</button>
+    	</div>
+    </div>
+
+</div>
+
+
+
+
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="js/jquery-3.0.0.js" type="text/javascript"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+  <script src="js/timer.js" type="text/javascript"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+
+
+<script type="text/javascript">
+	
+	
+
+// funcion drag drog
+var dragSrcEl = null;
+var cols = document.querySelectorAll('.columna1');
+var movimiento=0;
+
+function handleDragStart(e) {
+  dragSrcEl = this;
+  e.dataTransfer.effectAllowed = 'move';
+  e.dataTransfer.setData('text/html', this.innerHTML);
+  movimiento++;
+  document.getElementById('movimiento').innerHTML = movimiento;
+  funcionPrincipal();
+}
+
+function handleDragOver(e) {
+  if (e.preventDefault) {
+    e.preventDefault(); 
+  }
+
+  e.dataTransfer.dropEffect = 'move';  
+
+  return false;
+}
+
+function handleDragEnter(e) {
+  this.classList.add('over');
+}
+
+function handleDragLeave(e) {
+  this.classList.remove('over'); 
+}
+
+function handleDrop(e) {
+  if (e.stopPropagation) {
+    e.stopPropagation();
+  }
+  
+  if (dragSrcEl != this) {
+    dragSrcEl.innerHTML = this.innerHTML;
+    this.innerHTML = e.dataTransfer.getData('text/html');
+    this.classList.remove('over');
+  }
+
+  return false;
+}
+
+function handleDragEnd(e) {
+  [].forEach.call(cols, function (col) {
+    col.classList.remove('over');
+  });
+}
+
+[].forEach.call(cols, function(col) {
+  col.addEventListener('dragstart', handleDragStart, false);
+  col.addEventListener('dragenter', handleDragEnter, false);
+  col.addEventListener('dragover', handleDragOver, false);
+  col.addEventListener('dragleave', handleDragLeave, false);
+  col.addEventListener('drop', handleDrop, false);
+  col.addEventListener('dragend', handleDragEnd, false);
+
+});
+
+
+</script>
+</body>
+</html>

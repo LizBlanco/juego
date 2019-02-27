@@ -1,0 +1,209 @@
+<!-- <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Drag and Drop API</title>    
+</head>
+<body>
+    <header>
+        <h1>Drag and drop HTML elements</h1>
+    </header>
+    <article>
+      
+            <div draggable="true">
+                <input type="text" placeholder="Texbox A" /></div>
+            <div draggable="true">
+                <input type="text" placeholder="Texbox B" /></div>
+            <div draggable="true">
+                <input type="text" placeholder="Texbox C" /></div>
+            <div draggable="true">
+                <input type="text" placeholder="Texbox D" /></div>
+            <div draggable="true">
+                <input type="text" placeholder="Texbox E" /></div>
+            <div draggable="true">
+                <input type="text" placeholder="Texbox F" /></div>
+        </ul>
+        <ul>
+            <div draggable="true">
+                <label for="txtG">Label G</label><input type="text" placeholder="Texbox G" /></div>
+            <div draggable="true">
+                <label for="txtH">Label H</label><input type="text" placeholder="Texbox H" /></div>
+            <div draggable="true">
+                <label for="txtI">Label I</label><input type="text" placeholder="Texbox I" /></div>
+            <div draggable="true">
+                <label for="txtJ">Label J</label><input type="text" placeholder="Texbox J" /></div>
+            <div draggable="true">
+                <label for="txtK">Label K</label><input type="text" placeholder="Texbox K" /></div>
+            <div draggable="true">
+                <label for="txtL">Label L</label><input type="text" placeholder="Texbox L" /></div>
+        
+    </article>    
+</body>
+</html>
+
+
+
+<script type="text/javascript">
+    
+    var HTML5 = HTML5 || {};
+
+HTML5.DnD = function() {
+    //private members
+    var dragSrcEl = null,
+        draggables = null,
+
+        init = function(selector) {
+
+            draggables = document.querySelectorAll(selector);
+
+            //Set listeners
+            [].forEach.call(draggables, function(elem) {
+                elem.addEventListener("dragstart", dragStart, false);
+                elem.addEventListener("drag", drag, false);
+                elem.addEventListener("dragenter", dragEnter, false);
+                elem.addEventListener("dragover", dragOver, false);
+                elem.addEventListener("dragleave", dragLeave, false);
+                elem.addEventListener("drop", drop, false);
+                elem.addEventListener("dragend", dragEnd, false);
+            });
+
+        },
+        dragStart = function(e) {
+            e.dataTransfer.effectAllowed = 'move';
+            //e.dataTransfer.setData('text/html', this.innerHTML);
+            e.dataTransfer.setData('text', this.innerHTML);
+            dragSrcEl = this;
+            this.className = this.className.replace("target", "");
+
+        },
+        drag = function(e) {
+            this.className += ' moving';
+        },
+        dragOver = function(e) {
+            if (e.preventDefault) {
+                e.preventDefault();
+            }
+
+            e.dataTransfer.dropEffect = 'move';
+            this.className += " over";
+
+
+        },
+        dragEnter = function() {
+            this.className += " over";
+        },
+        dragLeave = function() {
+            this.className = "";
+        },
+        drop = function(e) {
+            if (e.stopPropagation) {
+                e.stopPropagation();
+            }
+
+            if (dragSrcEl != this) {
+                dragSrcEl.innerHTML = this.innerHTML;
+                //this.innerHTML = e.dataTransfer.getData('text/html');
+                this.innerHTML = e.dataTransfer.getData('text');
+            }
+
+            return false;
+        },
+        dragEnd = function() {[].forEach.call(draggables, function(elem) {
+                elem.className = "";
+            });
+        };
+
+    return {
+        init: init
+    }
+}();
+HTML5.DnD.init(' div[draggable=true]');
+</script>
+
+
+ -->
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link  rel="icon" href="photos/cakeLogo.png"/>
+    <title>Home - Our Sweets</title>
+    <link href="styles/style.css" type="text/css" rel="stylesheet"/>
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- The Header -->
+  <section id="header">
+    <a href="index.html">
+      <div id="logo">
+          <img src="photos/cakeLogo.png" />
+        </div>
+    </a>
+        <div id="companyName">
+          Our Sweets
+          </div>
+              <div id="nav">
+                <label for="toggle" style="color:#e46e7f;">&#9776;</label>
+                <input type="checkbox" id="toggle"/>
+                <div id="toggledNav">
+                  <ul>
+                    <li><a class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                  </ul>
+                </div>
+              </div>
+      </section>
+      <section id="banner">
+
+      </section>
+    <!-- The Contents -->
+      <section id="contents">
+        <div id="area1">
+            <h2>New Dessert</h2>
+            <h1>Yogurt Dash</h1>
+            <p>Enjoy the frost goodness of yogurt. Yogurt dash<br />
+            will fill your tummy with the delight of yogurt<br />
+            goodness.</p>
+        </div>
+          <div id="area2">
+            <ul>
+              <li><div><a href=""><img src="photos/cakeLogo.png"/></a></div>
+              Our Products</li>
+              <li><div><a href="about.html"><img src="photos/bookIcon.png" width="130"/></a></div>
+              Our Story</li>
+              <li><div><a href=""><img src="photos/smileyIcon.png" width="130"/></a></div>
+              Our Flavors</li>
+              <li><div><a href=""><img src="photos/locationBeaconIcon.png" width="120"/></a></div>
+              Our Location</li>
+            </ul>
+          </div>
+          <div id="area3">
+
+          </div>
+      </section>
+    <!-- The Footer -->
+      <section id="footer">
+        <div id="socialMediaLinks">
+          <ul>
+            <li><a href="#"><img src="photos/facebookIcon.png" width="150"/></a></li>
+            <li><a href="#"><img src="photos/instagramIcon.png"/></a></li>
+            <li><a href="#"><img src="photos/twitterIcon.png"/></a></li>
+            <li><a href="#"><img src="photos/pinterestIcon.png"/></a></li>
+          </ul>
+        </div>
+        <div id="copyrightInfo">
+          <p>&copy Our Sweets. All Rights Reserved.</p>
+        </div>
+      </section>
+
+      <script src="scripts/jquery-3.3.1.js"></script>
+      <script src="scripts/bootstrap.min.js"></script>
+      <script src="scripts/index.js"></script>
+  </body>
+</html>
